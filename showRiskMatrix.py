@@ -25,12 +25,14 @@ def showRiskMatrix(json_file):
     }
 
     risk_matrix = [[[] for _ in range(4)] for _ in range(5)]
+    risk_trends = {}
 
     for item in data:
         prob = probability_map.get(item["Probability"], -1)
         cons = consequence_map.get(item["Consequence"], -1)
         if prob != -1 and cons != -1:
             risk_matrix[prob][cons].append(item["ID"])
+            risk_trends[item["ID"]] = item["Risk Trend"]
 
     fig, ax = plt.subplots(figsize=(12, 9))
 
@@ -38,14 +40,22 @@ def showRiskMatrix(json_file):
     yellow = "#FFFF00"
     green = "#90EE90"
     blue = "#00FFFF"
+    orange = "#FFA500"
 
     color_map = [
         [blue, blue, green, yellow],
         [blue, green, green, yellow],
         [blue, green, yellow, red],
-        [blue,green,yellow,red],
+        [blue, green, yellow, red],
         [green, yellow, red, red]
     ]
+
+    trend_colors = {
+        "Decreasing": green,
+        "Stable": blue,
+        "Increasing": orange,
+        "Surging": red
+    }
 
     for i in range(5):
         for j in range(4):
@@ -53,7 +63,8 @@ def showRiskMatrix(json_file):
             ax.add_patch(rect)
             ids = risk_matrix[i][j]
             for k, id_val in enumerate(ids):
-                ax.text(j + 0.5, i + 0.5, str(id_val), ha='center', va='center', fontsize=12, color='black', bbox=dict(facecolor='white', edgecolor='black', boxstyle='circle'))
+                trend_color = trend_colors.get(risk_trends[id_val], 'white')
+                ax.text(j + 0.5, i + 0.5, str(id_val), ha='center', va='center', fontsize=12, color='black', bbox=dict(facecolor=trend_color, edgecolor='black', boxstyle='circle'))
 
     ax.set_xticks([0.5, 1.5, 2.5, 3.5])
     ax.set_xticklabels([])
