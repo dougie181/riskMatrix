@@ -2,7 +2,7 @@
   {
     "ID": 1,
     "Title": "Strategic Plan | Statement of Intent",
-    "Owner": "Kathryn Giudes",
+    "Owner": "Person A",
     "Rating": "Medium",
     "Rating Last Month": "Medium high",
     "Risk Trend": "Decreasing",
@@ -18,7 +18,7 @@
   {
     "ID": 2,
     "Title": "Product",
-    "Owner": "Cameron Grant",
+    "Owner": "Person B",
     "Rating": "Medium",
     "Rating Last Month": "Medium",
     "Risk Trend": "Stable",
@@ -34,7 +34,7 @@
   {
     "ID": 3,
     "Title": "Change Mgmt",
-    "Owner": "Doug Inman",
+    "Owner": "Person C",
     "Rating": "Medium",
     "Rating Last Month": "Medium",
     "Risk Trend": "Decreasing",
@@ -50,7 +50,7 @@
   {
     "ID": 4,
     "Title": "People",
-    "Owner": "Paige Harkness",
+    "Owner": "Person D",
     "Rating": "Medium",
     "Rating Last Month": "Medium high",
     "Risk Trend": "Decreasing",
@@ -66,7 +66,7 @@
   {
     "ID": 5,
     "Title": "Fraud",
-    "Owner": "Amanda Belosi",
+    "Owner": "Person E",
     "Rating": "High",
     "Rating Last Month": "Medium high",
     "Risk Trend": "Surging",
@@ -82,7 +82,7 @@
   {
     "ID": 6,
     "Title": "Revenue, Growth & Solvency",
-    "Owner": "Kathryn Giudes",
+    "Owner": "Person A",
     "Rating": "High",
     "Rating Last Month": "Medium high",
     "Risk Trend": "Surging",
@@ -98,7 +98,7 @@
   {
     "ID": 7,
     "Title": "Governance",
-    "Owner": "Dan Gray",
+    "Owner": "Person F",
     "Rating": "Medium",
     "Rating Last Month": "Medium",
     "Risk Trend": "Stable",
@@ -114,7 +114,7 @@
   {
     "ID": 8,
     "Title": "Information Security",
-    "Owner": "John Smith",
+    "Owner": "Person G",
     "Rating": "Medium",
     "Rating Last Month": "Medium",
     "Risk Trend": "Increasing",
@@ -130,7 +130,7 @@
   {
     "ID": 9,
     "Title": "Data Integrity",
-    "Owner": "John Smith",
+    "Owner": "Person G",
     "Rating": "Medium",
     "Rating Last Month": "Medium",
     "Risk Trend": "Stable",
@@ -146,7 +146,7 @@
   {
     "ID": 10,
     "Title": "Security Operations",
-    "Owner": "Amanda Belosi",
+    "Owner": "Person E",
     "Rating": "Medium",
     "Rating Last Month": "Medium",
     "Risk Trend": "Increasing",
@@ -162,7 +162,7 @@
   {
     "ID": 11,
     "Title": "Insurance",
-    "Owner": "Brett Saint",
+    "Owner": "Person H",
     "Rating": "Medium",
     "Rating Last Month": "Medium",
     "Risk Trend": "Decreasing",
@@ -178,7 +178,7 @@
   {
     "ID": 12,
     "Title": "Regulatory",
-    "Owner": "Tracy Williams",
+    "Owner": "Person I",
     "Rating": "Medium",
     "Rating Last Month": "Medium high",
     "Risk Trend": "Stable",
