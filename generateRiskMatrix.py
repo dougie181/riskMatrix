@@ -34,12 +34,17 @@ def generate_risk_matrix_fixed_axes(json_file):
 
     fig, ax = plt.subplots(figsize=(12, 9))
 
+    red = "#FF0000"
+    yellow = "#FFFF00"
+    green = "#90EE90"
+    blue = "#00FFFF"
+
     color_map = [
-        ["#00FFFF", "#00FFFF", "#00FFFF", "#FFFF00"],
-        ["#00FFFF", "#00FFFF", "#FFFF00", "#FFFF00"],
-        ["#00FFFF", "#00FFFF", "#FFFF00", "#FF0000"],
-        ["#00FFFF", "#FFFF00", "#FF0000", "#FF0000"],
-        ["#00FFFF", "#FFFF00", "#FF0000", "#FF0000"]
+        [blue, blue, green, yellow],
+        [blue, green, green, yellow],
+        [blue, green, yellow, red],
+        [blue,green,yellow,red],
+        [green, yellow, red, red]
     ]
 
     for i in range(5):
@@ -60,7 +65,7 @@ def generate_risk_matrix_fixed_axes(json_file):
         ax.text(i + 0.5, 5.2, label, ha='center', va='center', fontsize=12, color='black')
     
     for i, label in enumerate(["Rare", "Improbable", "Possible", "Probable", "Almost Certain"]):
-        ax.text(-0.5, i + 0.5, label, ha='center', va='center', fontsize=12, color='black', rotation=90)
+        ax.text(-0.05, i + 0.5, label, ha='right', va='center', fontsize=12, color='black', rotation=0)
 
     ax.set_xlim(0, 4)
     ax.set_ylim(0, 5)
@@ -72,9 +77,13 @@ def generate_risk_matrix_fixed_axes(json_file):
     ax.xaxis.set_major_formatter(plt.NullFormatter())
     ax.yaxis.set_major_formatter(plt.NullFormatter())
 
+    # Adding axis titles
     ax.set_xlabel("Consequence", fontsize=14, labelpad=20)
-    ax.set_ylabel("Probability", fontsize=14, labelpad=40)
-    
+    ax.set_ylabel("Likelihood", fontsize=14, labelpad=70)
+
+    # Adjust position of y-axis label and axis title
+    #ax.yaxis.set_label_coords(-0.2, 0.5)
+
     # Positioning the title
     plt.title("Risk Matrix", fontsize=16, pad=20)
 
