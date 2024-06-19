@@ -15,7 +15,12 @@ source virtualenvs/riskMatrix/bin/activate
 pip3 install -r requirements.txt  
 ```
 
-3. Run the program
+3. change permissions of the script
+```
+chmod a+x generateRiskMatrix.py
+```
+
+4. Run the program
 ```
 generateRiskMatrix.py risk_data.json
 ```

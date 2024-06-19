@@ -1,8 +1,11 @@
+#!/usr/bin/env python3
+
 import json
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
+import sys
 
-def generate_risk_matrix(json_file):
+def generate_risk_matrix_fixed_axes(json_file):
     with open(json_file, 'r') as file:
         data = json.load(file)
 
@@ -45,19 +48,40 @@ def generate_risk_matrix(json_file):
             ax.add_patch(rect)
             ids = risk_matrix[i][j]
             for k, id_val in enumerate(ids):
-                ax.text(j + 0.5, i + 0.7 - k*0.3, str(id_val), ha='center', va='center', fontsize=12, color='black', bbox=dict(facecolor='white', edgecolor='black', boxstyle='circle'))
+                ax.text(j + 0.5, i + 0.5, str(id_val), ha='center', va='center', fontsize=12, color='black', bbox=dict(facecolor='white', edgecolor='black', boxstyle='circle'))
 
     ax.set_xticks([0.5, 1.5, 2.5, 3.5])
     ax.set_xticklabels(["Minor", "Moderate", "Major", "Extreme"], fontsize=12)
     ax.set_yticks([0.5, 1.5, 2.5, 3.5, 4.5])
     ax.set_yticklabels(["Rare", "Improbable", "Possible", "Probable", "Almost Certain"], fontsize=12)
 
+    # Add labels to the middle of each column and row
+    for i, label in enumerate(["Minor", "Moderate", "Major", "Extreme"]):
+        ax.text(i + 0.5, -0.3, label, ha='center', va='center', fontsize=12, color='black')
+    
+    for i, label in enumerate(["Rare", "Improbable", "Possible", "Probable", "Almost Certain"]):
+        ax.text(-0.3, i + 0.5, label, ha='center', va='center', fontsize=12, color='black', rotation=90)
+
+    ax.set_xlim(0, 4)
+    ax.set_ylim(0, 5)
+    ax.set_xticks(range(5))
+    ax.set_yticks(range(6))
+    ax.grid(True, which='both', color='black', linestyle='-', linewidth=0.5)
+
+    # Only show the grid lines that divide the cells
+    ax.xaxis.set_major_formatter(plt.NullFormatter())
+    ax.yaxis.set_major_formatter(plt.NullFormatter())
+
     ax.set_xlabel("Consequence", fontsize=14)
     ax.set_ylabel("Probability", fontsize=14)
     ax.set_title("Risk Matrix", fontsize=16)
     plt.gca().invert_yaxis()
-    plt.grid(True, which='both', color='black', linestyle='-', linewidth=0.5)
     plt.show()
 
-# Usage
-generate_risk_matrix('./risk_data.json')
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python3 generateRiskMatrix.py <path_to_json_file>")
+        sys.exit(1)
+
+    json_file = sys.argv[1]
+    generate_risk_matrix_fixed_axes(json_file)
