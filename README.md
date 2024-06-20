@@ -1,7 +1,8 @@
 # riskMatrix
-Simple tool to create a riskMatrix image based on a risk register
+Simple tool to create a riskMatrix image based on a risk register table, which is defined my as JSON data structure
 
-## Local Installation (macOS)
+# Usage and Installation
+## Local version (macOS)
 
 1. Change directory to local folder
 ```
@@ -29,7 +30,7 @@ or
 ./showRiskMatrix.py risk_data.json
 ```
 
-## Azure installation
+## Azure version
 
 1. Change directory to azure folder
 ```
