@@ -1,5 +1,5 @@
 # riskMatrix
-Simple tool to create a riskMatrix image based on a risk register table, which is defined my as JSON data structure
+Simple tool to create a riskMatrix image based on a risk register table, which is defined as JSON data structure
 
 # Usage and Installation
 ## Local version (macOS)
