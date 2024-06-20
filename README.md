@@ -1,7 +1,7 @@
 # riskMatrix
 Simple tool to create a riskMatrix image based on a risk register
 
-## Local nstallation
+## Local Installation (macOS)
 
 1. Change directory to local folder
 ```
@@ -28,3 +28,24 @@ or
 ```
 ./showRiskMatrix.py risk_data.json
 ```
+
+## Azure installation
+
+1. Change directory to azure folder
+```
+cd azure
+```
+1. Install the Azure CLI -ref: [https://learn.microsoft.com/en-us/cli/azure/install-azure-cli](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
+    - macOS: ```brew update && brew install azure-cli```
+2. Open project in VSCode
+3. Install the **Azure Functions** Extension
+4. Right click the functionApp folder and select "Deploy to function App..."
+5. Open a terminal session
+6. Retrieve the function name nad resource group, using: 
+   
+    ```az functionapp list --output table```
+7. Update the **RESOURCE_GROUP** and **FUNCTION_APP_NAME** in the testFunction.sh script
+8. Run the test script 
+    ```scripts/testFunction.sh```
+9. open the image file
+    ```open example_risk_matrix.png```
