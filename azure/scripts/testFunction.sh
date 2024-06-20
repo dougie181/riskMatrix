@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Variables
-RESOURCE_GROUP="macrodatariskmatrix" # Resource group name - change as needed
-FUNCTION_APP_NAME="macroDATAriskMatrix" # Function app name - change as needed
+RESOURCE_GROUP="ResourceGroup"  # Resource group name - change as needed
+FUNCTION_APP_NAME="riskMatrixFn"        # Function app name - change as needed
 FUNCTION_NAME="HttpTriggerFunction"
 
 DATA_FILE="data.json"
