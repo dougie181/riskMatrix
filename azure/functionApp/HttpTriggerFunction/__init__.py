@@ -6,7 +6,7 @@ import azure.functions as func
 import tempfile
 import os
 
-# Constants for probability, consequence maps snf colours
+# Constants for probability, consequence maps and colours
 PROBABILITY_MAP = {
     "Almost Certain": 4,
     "Probable": 3,
